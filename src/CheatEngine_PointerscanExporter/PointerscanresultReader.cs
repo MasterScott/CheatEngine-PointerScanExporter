@@ -163,14 +163,12 @@ namespace CheatEngine_PointerscanExporter
                                 result.offsetcount += fEndsWithOffsetList.Length;
 
                                 bit += fMaxBitCountLevel;
+                                
+                                result.offsets = new int[result.offsetcount];
 
 
-                                var offsetsCount = fEndsWithOffsetList.Length + result.offsetcount;
-                                result.offsets = new int[offsetsCount];
-
-
-                                if (MaxOffsetCount < offsetsCount)
-                                    MaxOffsetCount = offsetsCount;
+                                if (MaxOffsetCount < result.offsetcount)
+                                    MaxOffsetCount = result.offsetcount;
 
                                 for (int k = 0; k < fEndsWithOffsetList.Length; k++)
                                 {
@@ -203,7 +201,6 @@ namespace CheatEngine_PointerscanExporter
                         }
 
                     }
-
                 }
             }
         }
